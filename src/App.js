@@ -11,10 +11,11 @@ function App() {
     <>
     <Form setTimeLeft={setTimeLeft}/>
     {
-      timeLeft?
+      timeLeft<0?
+      <Finished setTimeLeft={setTimeLeft} setIsPoused={setIsPoused}/>:
       <Timer timeLeft={timeLeft} setTimeLeft={setTimeLeft} 
-              isPaused={isPaused} setIsPoused={setIsPoused}/>:
-      <Finished setTimeLeft={setTimeLeft} setIsPoused={setIsPoused}/>
+              isPaused={isPaused} setIsPoused={setIsPoused}/>
+      
     }
     </>
   );
