@@ -2,17 +2,19 @@ import React,{useState} from 'react';
 import Form from './components/Form';
 import Timer from './components/Timer';
 import Finished from './components/Finished';
-import Block from './components/Block';
+// import Block from './components/Block';
 
 function App() {
-  const [timeLeft, setTimerLeft] = useState(true);
+  const [timeLeft, setTimeLeft] = useState(0);
+  const [isPaused, setIsPoused] = useState(true);
   return (
     <>
-    <Form/>
+    <Form setTimeLeft={setTimeLeft}/>
     {
       timeLeft?
-      <Timer/>:
-      <Finished/>
+      <Timer timeLeft={timeLeft} setTimeLeft={setTimeLeft} 
+              isPaused={isPaused} setIsPoused={setIsPoused}/>:
+      <Finished setTimeLeft={setTimeLeft} setIsPoused={setIsPoused}/>
     }
     </>
   );
