@@ -5,10 +5,15 @@ import Finished from './components/Finished';
 import Block from './components/Block';
 
 function App() {
-  const [timerLeft, setTimerLeft] = useState(true);
+  const [timeLeft, setTimerLeft] = useState(true);
   return (
     <>
     <Form/>
+    {
+      timeLeft?
+      <Timer/>:
+      <Finished/>
+    }
     </>
   );
 }
