@@ -12,13 +12,24 @@ const Text = styled.p`
 `
 
 function Form() {
+
+    const {register, handleSubmit, errors } = useForm();
     return (
         <Container>
             <Text>Minutes:</Text>
-            <form>
-                <input type="number"></input>
+            <form noValidate>
+                <input
+                    type="number"
+                    {...register('test', {required: {value: true, message: "please enter the number of minutes that you wpild like to study.."}},
+                                         {min: {value: .01, message: "please enter a number between .01 and 100."}},
+                                         {max: {value: true, message: "please enter number between .01 and 100."}}
+                    )}      
+                 
+                >
+                </input>
                 <input type="submit"></input>
             </form>
+            {/* {errors.minutes && <p>{errors.minutes.message}</p>} */}
         </Container>
     )
 }
