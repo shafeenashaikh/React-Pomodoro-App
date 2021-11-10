@@ -1,9 +1,10 @@
 import React from 'react'
 
-function Block() {
+const Block= ({param, number}) => {
     return (
         <div>
-            BLOCK
+            <h1>{number}</h1>
+            <h1>{param}</h1>
         </div>
     )
 }
