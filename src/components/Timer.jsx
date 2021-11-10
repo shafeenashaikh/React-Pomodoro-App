@@ -1,9 +1,10 @@
 import React from 'react'
+import Block from './Block'
 
 function Timer() {
     return (
         <div>
-            TIMER
+           <Block/>:<Block/>
         </div>
     )
 }
