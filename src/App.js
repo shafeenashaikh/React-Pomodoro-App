@@ -9,8 +9,10 @@ const Title = styled.div`
     font-size: 50px;
     text-align: center;
     padding: 50px 0px;
-
     background: pink;
+    color: whitesmoke;
+    text-shadow: 2px 2px grey;
+    margin-bottom: 20px;
 `
 
 function App() {
