@@ -12,13 +12,14 @@ const Text = styled.p`
    margin: 0px 0px
 `
 
-function Form() {
+function Form({setTimeLeft}) {
 
     const {register, handleSubmit, errors } = useForm();
 
     const onsubmit = data => {
         console.log(data);
-        $('#pomodoro-form').trigger("reset")
+        $('#pomodoro-form').trigger("reset");
+        setTimeLeft(data*60);
     };
 
     return (

@@ -6,7 +6,6 @@ const Container = styled.div`
     display:flex;
     justify-content: center;
 
-    margin-top: 20px;
 `
 const Text = styled.h1`
     font-size: 40px;
