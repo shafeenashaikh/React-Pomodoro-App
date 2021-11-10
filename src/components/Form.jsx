@@ -1,6 +1,7 @@
 import React from 'react'
 import {useForm} from 'react-hook-form';
 import styled from 'styled-components';
+import * as $ from 'jquery'
 
 const Container = styled.div`
     display:flex;
@@ -17,6 +18,7 @@ function Form() {
 
     const onsubmit = data => {
         console.log(data);
+        $('#pomodoro-form').trigger("reset")
     };
 
     return (
