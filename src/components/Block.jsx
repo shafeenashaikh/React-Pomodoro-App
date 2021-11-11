@@ -4,12 +4,14 @@ import styled from 'styled-components';
 const Text = styled.h1`
     font-size: 40px;
 `
-
-const Block= ({number,param}) => {
+const Title = styled.h1`
+    font-size: 30px;
+`
+const Block = ({param, number}) => {
     return (
         <div align='center'>
-            <Text>{number}</Text>
-            <h1>{param}</h1>
+            <Text>{number}</Text>  
+            <Title>{param}</Title>
         </div>
     )
 }

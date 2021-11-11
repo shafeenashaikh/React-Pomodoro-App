@@ -1,25 +1,32 @@
 import React from 'react'
-import {useForm} from 'react-hook-form';
+import { useForm } from "react-hook-form";
 import styled from 'styled-components';
-import * as $ from 'jquery'
+import * as $ from 'jquery';
 
 const Container = styled.div`
     display:flex;
     justify-content: center;
-`
+`;
+
+const Input = styled.input`
+    font-size: 20px;
+    padding: 5px;
+    margin: 0px 5px;
+`;
 
 const Text = styled.p`
-   margin: 0px 0px
-`
+    margin: 5px 5px;
+    font-size: 20px;
+`;
 
-function Form({setTimeLeft}) {
-
-    const {register, handleSubmit, errors } = useForm();
+const Form = ({setTimeLeft, setIsPaused}) => {
+    const { register, handleSubmit, errors } = useForm();
 
     const onSubmit = data => {
         console.log(data.minutes);
         $('#pomodoro-form').trigger("reset");
         setTimeLeft(data.minutes*60);
+        setIsPaused(false);
     };
 
     return (
@@ -27,7 +34,7 @@ function Form({setTimeLeft}) {
         <Container>
             <Text>Minutes:</Text>
             <form noValidate onSubmit={handleSubmit(onSubmit)} id='pomodoro-form'>
-                <input
+            <input
                     type='number'
                     name='minutes'
                     id='minutes-input'
@@ -38,10 +45,10 @@ function Form({setTimeLeft}) {
                  
                 >
                 </input>
-                <input type="submit"></input>
+                <Input type='submit'/>
             </form>
-          </Container>
-            {errors && <p>{errors.message}</p>}
+        </Container>
+        <div align='center'>{errors && <p>{errors.minutes.message}</p>}</div>
         </>
     )
 }
