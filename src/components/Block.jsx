@@ -5,7 +5,7 @@ const Text = styled.h1`
     font-size: 40px;
 `
 
-const Block= ({param, number}) => {
+const Block= ({number,param}) => {
     return (
         <div align='center'>
             <Text>{number}</Text>

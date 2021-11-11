@@ -2,7 +2,7 @@ import React from 'react'
 
 function Finished() {
     return (
-        <div>
+        <div align='center'>
             FINISHED
         </div>
     )

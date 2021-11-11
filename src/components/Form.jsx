@@ -16,17 +16,17 @@ function Form({setTimeLeft}) {
 
     const {register, handleSubmit, errors } = useForm();
 
-    const onsubmit = data => {
-        console.log(data);
+    const onSubmit = data => {
+        console.log(data.minutes);
         $('#pomodoro-form').trigger("reset");
-        setTimeLeft(data*60);
+        setTimeLeft(data.minutes*60);
     };
 
     return (
         <>
         <Container>
             <Text>Minutes:</Text>
-            <form noValidate onSubmit={handleSubmit(onsubmit)} id='pomodoro-form'>
+            <form noValidate onSubmit={handleSubmit(onSubmit)} id='pomodoro-form'>
                 <input
                     type='number'
                     name='minutes'
